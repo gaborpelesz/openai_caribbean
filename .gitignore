@@ -1,0 +1,6 @@
+# Exclude data folders
+stac/*
+data/*
+
+# Exclude macOS data services file
+.DS_Store
