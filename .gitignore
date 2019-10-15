@@ -1,6 +1,9 @@
+# Exclude macOS data services file
+.DS_Store
+
 # Exclude data folders
 stac
 data
 
-# Exclude macOS data services file
-.DS_Store
+# Exclude jupyter notebook checkpoints
+.ipynp_checkpoints
