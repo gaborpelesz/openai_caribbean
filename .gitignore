@@ -6,4 +6,4 @@ stac
 data
 
 # Exclude jupyter notebook checkpoints
-.ipynp_checkpoints
+*/.ipynp_checkpoints
