@@ -4,6 +4,7 @@
 # Exclude data folders
 stac
 data
+_old
 
 # Exclude jupyter notebook checkpoints
 */.ipynp_checkpoints
