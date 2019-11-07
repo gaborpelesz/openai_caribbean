@@ -25,12 +25,13 @@ def main():
     ]
 
     ortho_extension = "{}_ortho-cog.tif"
-    ortho_extension_test = "{}_ortho-cog-thumbnail.png"
+    # ortho_extension = "{}_ortho-cog-thumbnail.png"
     map_extension = "{}-imagery.json"
     labels_extension = "train-{}.geojson"
+    img_format = "tiff"
 
     URLS = [(
-        base + "/" + ortho_extension_test.format(base.split("/")[-1]),
+        base + "/" + ortho_extension.format(base.split("/")[-1]),
         base + "/" + map_extension.format(base.split("/")[-1]),
         base + "/" + labels_extension.format(base.split("/")[-1])
     ) for base in URLS_BASES]
@@ -44,7 +45,7 @@ def main():
         os.makedirs(training_dir)
 
     for url in URLS:
-        generate_images(url, to_folder=training_dir, img_format="png")
+        generate_images(url, to_folder=training_dir, img_format=img_format)
         gc.collect()
 
 
