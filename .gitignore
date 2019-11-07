@@ -1,10 +1,14 @@
 # Exclude macOS data services file
 .DS_Store
 
-# Exclude data folders
+# Exclude data and unused source folders
 stac
 data
 _old
 
 # Exclude jupyter notebook checkpoints
 */.ipynp_checkpoints
+
+# Exclude generated dirs
+__pychace__
+.vscode
