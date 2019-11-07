@@ -67,19 +67,19 @@ def four_point_transform(image, pts):
 
 def get_rotated_bounding_rect(contour, INFO=False):
     if len(contour) != 4:
-        for max_dist_multiplier in range(1, 4):
-            approxed = cv2.approxPolyDP(
-                contour, (max_dist_multiplier*0.025) * cv2.arcLength(contour, True), True)
+        # for max_dist_multiplier in range(1, 4):
+        #     approxed = cv2.approxPolyDP(
+        #         contour, (max_dist_multiplier*0.025) * cv2.arcLength(contour, True), True)
 
-            if len(approxed) == 4:
-                if INFO:
-                    print("Contour approximated with maximum distance multiplier {}.".format(
-                        max_dist_multiplier*0.025))
-                return approxed.reshape((4, 2)).astype("float32")
-        if INFO:
-            print("Couldn't approximate contour. Using bounding rectangle instead.")
+        #     if len(approxed) == 4:
+        #         if INFO:
+        #             print("Contour approximated with maximum distance multiplier {}.".format(
+        #                 max_dist_multiplier*0.025))
+        #         return approxed.reshape((4, 2)).astype("float32")
+        # if INFO:
+        #     print("Couldn't approximate contour. Using bounding rectangle instead.")
 
-        return np.array(cv2.boundingRect(contour)).reshape((2, 2)).astype("float32")
+        return cv2.boxPoints(cv2.minAreaRect(contour)).round()
     else:
         if INFO:
             print("Contour originally had 4 points. Returning.")

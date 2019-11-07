@@ -57,7 +57,7 @@ def generate_images(image_url_tuple, to_folder, img_format="tif"):
                 raw_roof_coordinates)
 
             roof_pixels = get_rotated_bounding_rect(
-                roof_coordinate_pixels)
+                roof_coordinate_pixels, INFO=False)
 
             roof_top_left = tuple(np.min(roof_pixels, axis=0).astype(
                 np.int32).tolist())
