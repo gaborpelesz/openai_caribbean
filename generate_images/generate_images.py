@@ -83,8 +83,8 @@ def generate_images(image_url_tuple, to_folder, img_format="tif"):
                 decreased_image, roof_pixels)
 
             # scale image to 224x224
-            transformed_roof_image = cv2.resize(
-                transformed_roof_image, (224, 224), interpolation=cv2.INTER_CUBIC)
+            # transformed_roof_image = cv2.resize(
+            #    transformed_roof_image, (224, 224), interpolation=cv2.INTER_CUBIC)
 
             # write image to destination
             cv2.imwrite('{}/{}-{}.png'.format(to_folder, roof_id,
