@@ -3,6 +3,7 @@ import sys
 import gc
 import numpy as np
 from generate_images import generate_images
+import time
 
 
 def validate_urls(urls):
@@ -16,6 +17,8 @@ def validate_urls(urls):
 
 
 def main():
+    process_start_time = time.time()
+
     URLS_BASES = [
         "stac/colombia/borde_rural",
         "stac/colombia/borde_soacha",
@@ -23,6 +26,7 @@ def main():
         "stac/guatemala/mixco_3",
         "stac/st_lucia/dennery"
     ]
+    target_dir = "stac/training_data"
 
     ortho_extension = "{}_ortho-cog.tif"
     # ortho_extension = "{}_ortho-cog-thumbnail.png"
@@ -40,13 +44,14 @@ def main():
     if not validate_urls(URLS):
         return
 
-    training_dir = "stac/training_data"
-    if not os.path.exists(training_dir):
-        os.makedirs(training_dir)
+    if not os.path.exists(target_dir):
+        os.makedirs(target_dir)
 
     for url in URLS:
-        generate_images(url, to_folder=training_dir, img_format=img_format)
+        generate_images(url, to_folder=target_dir, img_format=img_format)
         gc.collect()
+
+    print("Finished in: {:.3f}s".format(time.time()-process_start_time))
 
 
 if __name__ == "__main__":
