@@ -1,0 +1,7 @@
+{
+    "concrete_cement": 0,
+    "healthy_metal": 1,
+    "incomplete": 2,
+    "irregular_metal": 3,
+    "other": 4
+}
