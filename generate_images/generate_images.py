@@ -14,20 +14,20 @@ def load_json_file(url):
     return json.loads(datastring)
 
 
-def generate_images(image_url_tuple, to_folder, img_format="tif"):
+def generate_images(image_url_tuple, to_folder, img_format="tif", test_data=False):
     """
     Params:
         image_url_tuple: URL tuple, where tuples are path to the
             following file -> (image.<tif || png>, image.json, roof_roofs.json)
     """
-    image_url, image_json_url, roof_roof_url = image_url_tuple
+    image_url, image_json_url, roof_json_url = image_url_tuple
 
     # load image bounding box
     image_json = load_json_file(image_json_url)
     image_bbox = [image_json["bbox"][:2], image_json["bbox"][2:]]
 
     # load roof roof data
-    roofs_data = load_json_file(roof_roof_url)
+    roofs_data = load_json_file(roof_json_url)
 
     # read image
     image = None
@@ -50,8 +50,8 @@ def generate_images(image_url_tuple, to_folder, img_format="tif"):
             # access raw coordinates from json data
             raw_roof_coordinates = feature["geometry"]["coordinates"][0]
             # access roof ID and roof material
-            roof_id, roof_material = (
-                feature["properties"]["id"], feature["properties"]["roof_material"])
+            roof_id = feature["properties"]["id"]
+            roof_material = "" if test_data else feature["properties"]["roof_material"]
 
             roof_coordinate_pixels = bigimage.coords_to_pixels(
                 raw_roof_coordinates)
@@ -87,8 +87,11 @@ def generate_images(image_url_tuple, to_folder, img_format="tif"):
             #    transformed_roof_image, (224, 224), interpolation=cv2.INTER_CUBIC)
 
             # write image to destination
-            cv2.imwrite('{}/{}-{}.png'.format(to_folder, roof_id,
-                                              roof_material), transformed_roof_image)
+            if roof_material != '':
+                destination_img = '{}/{}-{}.png'.format(to_folder, roof_id, roof_material)
+            else:
+                destination_img = '{}/{}.png'.format(to_folder, roof_id)
+            cv2.imwrite(destination_img, transformed_roof_image)
 
 
 def image_cut_rectangle(image, rectangle_vertices):
