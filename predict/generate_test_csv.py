@@ -2,7 +2,7 @@ import os
 import cv2
 from model import ClassifyImage
 
-def construct_row(roof_type, prob):
+def construct_row(roof_id, roof_type, prob):
     labels = [  "concrete_cement",
                 "healthy_metal",
                 "incomplete",
@@ -11,7 +11,7 @@ def construct_row(roof_type, prob):
     roof_idx = labels.index(roof_type)
 
     row = []
-    row.append(roof_type)
+    row.append(roof_id)
     for i in range(5):
         if roof_idx == i:
             row.append(str(prob))
@@ -41,6 +41,6 @@ with open(output_csv, 'w') as output_file:
             img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             pred_roof_type, pred_probability = model.predict(img)
 
-            predicted_row_str = construct_row(pred_roof_type, pred_probability)
+            predicted_row_str = construct_row(img_file.split('.')[0], pred_roof_type, pred_probability)
 
             output_file.write(predicted_row_str)
