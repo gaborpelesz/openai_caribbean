@@ -7,8 +7,8 @@ data
 _old
 
 # Exclude jupyter notebook checkpoints
-*/.ipynp_checkpoints
+.ipynp*
 
 # Exclude generated dirs
-__pychace__
+__pycache__
 .vscode
