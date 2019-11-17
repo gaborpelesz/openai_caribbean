@@ -19,7 +19,7 @@ def construct_row(roof_type, prob):
             row.append('0.0')
     return ','.join(row) + '\n'
 
-model_name = 'karibi.h5'
+model_name = 'model.h5'
 labels_json_name = 'labels.json'
 output_csv = 'predict/output/predicted_test_data.csv'
 test_data_dir = 'stac/test_data'
