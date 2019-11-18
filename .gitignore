@@ -5,6 +5,7 @@
 stac
 data
 _old
+additional
 
 # Exclude jupyter notebook checkpoints
 .ipynp*
@@ -12,3 +13,6 @@ _old
 # Exclude generated dirs
 __pycache__
 .vscode
+
+# Exclude model files
+*.h5
