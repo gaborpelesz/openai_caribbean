@@ -10,5 +10,5 @@ We uploaded our first predictions to the DrivenData competition, as the score sh
 <image src='images/first_submission.png'>
 
 ## 3. Conclusion 
-By analyzing our generated data, we found out that some of the images were dissorted and incorrect. By enhanching our image generator we might make our results better.
+By analyzing our generated data, we found out that some of the images were dissorted and incorrect. By enhanching our image generator we might get better our results.
 
