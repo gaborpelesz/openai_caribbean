@@ -5,10 +5,10 @@ For first try, we used transfer learning with ResNet50 base. The script of the m
 
 ## 2. First submission
 
-We uploaded our first predictions to the DrivenData competition, as the score shows below. With further optimalization we might get a much better one.
+We uploaded our first predictions to the DrivenData competition, as the score shows below. With further optimalization we will get a much better one.
 
 <image src='images/first_submission.png'>
 
 ## 3. Conclusion 
-Through analyzing our generated data we found out that some of the images were dissorted and incorrect. By enhanching our image generator we might make our results better.
+By analyzing our generated data, we found out that some of the images were dissorted and incorrect. By enhanching our image generator we might make our results better.
 
