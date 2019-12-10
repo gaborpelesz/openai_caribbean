@@ -47,7 +47,7 @@ def order_reference():
 def sort_rows():
     reference = order_reference()
 
-    with open("predict/output/predicted_test_data.csv", "r") as csv_file:
+    with open("predict/output/unsorted.csv", "r") as csv_file:
         # split to rows and exclude header
         data = csv_file.read().split('\n')
         header = data[0]
