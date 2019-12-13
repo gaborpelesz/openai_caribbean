@@ -5,4 +5,4 @@ For generating test results run the following from the repositorys root director
 python predict/generate_test_csv.py --model <model_path>
 ```
 
-To be able to run the script you need to place your .h5 file into the model_folder directory. The models filename must be: **model.h5**
+The **output** file will be in the output directory. The **sorted_test_data_prediction.csv** is ready to upload to the submission interface.
