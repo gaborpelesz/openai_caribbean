@@ -2,5 +2,5 @@
 
 For generating images run the following from the projects root directory:  
 ```bash
-python generate_images
+python extract_images
 ```
