@@ -26,9 +26,9 @@ def construct_row(roof_id, probs):
 labels_json_name = 'predict/model_folder/labels.json'
 output_csv = 'predict/output/unsorted.csv'
 test_data_dir = 'stac/datasets/test_data'
-model_path = 'predict/model_folder/(best)augmented_v2_VAL_LOSS_0.0003_VAL_ACC_0.7496.h5'
+model_path = 'predict/model_folder/inception_2.h5'
 
-input_size = (280,280)
+input_size = (299,299)
 
 model = load_model(model_path)
 
