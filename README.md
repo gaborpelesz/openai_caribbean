@@ -1,5 +1,9 @@
 # Open AI Caribbean Challenge
 
+## Final Report
+
+Our work is summarized by the **final_report.pdf** file.
+
 ## Repository
 
 - **Algorithms**: Part of our self-made algorithms which used by the model creation.
