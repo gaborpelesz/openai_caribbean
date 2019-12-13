@@ -6,6 +6,7 @@ stac
 data
 _old
 additional
+old_submissions
 
 # Exclude jupyter notebook checkpoints
 .ipynp*
