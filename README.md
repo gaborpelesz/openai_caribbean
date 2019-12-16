@@ -1,5 +1,11 @@
 # Open AI Caribbean Challenge
 
+**Team name: Tanacondas**
+**members:**
+- **Ákos Jakub**
+- **Gábor Pelesz**
+- **Zeynep Tasci**
+
 ## Final Report
 
 Our work is summarized by the **final_report.pdf** file.
