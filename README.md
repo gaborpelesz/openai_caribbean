@@ -1,6 +1,7 @@
 # Open AI Caribbean Challenge
 
 **Team name: Tanacondas**
+
 **members:**
 - **Ákos Jakub**
 - **Gábor Pelesz**
